@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajería UP</title>
+
+    <!--Vinculación con el archivo normalize.css-->
+    <link rel="preload" href="css/normalize.css" as="style" >
+    <link rel="stylesheet" href="css/normalize.css"> <!--Por su importancia, debe ser el primer archivo en cargar-->
+    
+   <!--Enlace para la API de Google Fonts-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+   <script src='mensajeria.js'></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+   <!--Es importante tener declaradas las librerías antes de declarar en enlace con una hoja de estilos externa-->
+   
+
+   <!--Vinculación del HTML a la hoja de estilos-->
+   <link rel="preload" href="css/styles-mensaj.css" as="style" >
+   <link href="css/styles-mensaj.css" rel="stylesheet">
+   <!--La hoja de estilos personalizada debe ser la última en agregarse-->
+</head>
+
+
+<body>
+    <header class="header" >
+        
+        <!--NAVEGACIÓN-->
+        <div class="nav-bg">
+            <nav class="navegacion-principal contenedor"> <!--Se pueden poner varias clases separadas por espacios-->
+                <a href="inicio.html">Inicio</a>
+                <a href="index.html">Servicios</a>
+                <a class="nav-activo"  href="mensajeria.html">Mensajería</a>
+                <a href="login.html">Iniciar sesión</a>
+            </nav>
+        </div>
+
+       <!--  INICIO DE CONTENIDO --------------------------------------------------- -->
+        <section class="hero__mensajeria"> <!-- La imagen se coloca desde la clase hero-->
+            <div class="contenido-hero__mensajeria">
+                <h1>Servicios de Mensajería</h1> <h2 class="separar-encimados bienvenido"> Universidad Panamericana</h2> 
+            </div>
+        </section>
+    </header>  <!-- FIN DEL HEADER -->
+
+
+    <main class="contenedor sombra separar-debajo" >
+        <main class="contenedor contenedor2">
+            <h2> Solicitud de Mensajería</h2>
+        </main>
+        
+        <div class = "servicios separar-encimados"> <!-- Blqoue completo que contiene todos los elementos -->
+
+            <section class="servicio"> <!--Primera sección del GRID 1 / 1-->
+                <a class="boton" href="interna.html">
+                    Mensajería Interna
+                </a>
+
+                <p class="servicio__texto separar-encimados" id="btn-interna">
+                    Envío de  paquetes dentro del campus y sus anexos.
+                </p>
+            </section>
+
+            <section class="servicio"> <!--Segunda sección del GRID 1 / 1-->
+
+                <a class="boton hero__cta">
+                    Mensajería Externa
+                </a>
+
+                <!--<div class="dropdown-menu">
+                    Mensajería Externa
+                    <ul class="dropdown">
+                        <li>Contacto</li>
+                        <li>Servicio</li>
+                    </ul> -->
+
+                <p class="servicio__texto separar-encimados">
+                    Servicio de paquetería nacional e internacional.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <section class="modal "> <!--VENTANA PARA MODAL-->
+        <div class="modal__container">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-x modal_x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <path d="M10 10l4 4m0 -4l-4 4" /> <!--IMAGEN DE X PARA CERRAR VENTANA-->
+            </svg>
+
+            <h2 class="modal__title">Solicitud de Mensajería Externa</h2>
+
+            <form action="" class="column-drop-css">
+                <div >
+                    <label for="location">Nombre del Emisor:</label>
+                    <input 
+                        type="text"
+                        id="task-location"
+                        class="form-control mb-3 servicio__textarea"
+                        placeholder="Nombre de la persona que envía"
+                        autofocus
+                        required
+                    />
+                    
+                    <label for="location">Ubicación de recolección:</label>
+                    <input 
+                        type="text"
+                        id="task-location"
+                        class="form-control mb-3 servicio__textarea"
+                        placeholder="Dónde se hará la recolección (ej. Ingeniería 3er piso, oficina 3)"
+                        required
+                    />
+
+                    <label for="contact">Celular:</label>
+                    <input 
+                        type="tel"
+                        id="task-contact"
+                        class="form-control mb-3 servicio__textarea"
+                        placeholder="Contacto de emergencia"
+                        required
+                    />
+
+                    <label for="contact">Correo:</label>
+                    <input 
+                        type="email"
+                        id="task-contact"
+                        class="form-control mb-3 servicio__textarea"
+                        placeholder="Correo Institucional"
+                        required
+                    />
+                </div>
+
+                <div>
+                    <label for="location" class="">Nombre del Receptor:</label>
+                    <input 
+                        type="text"
+                        id="task-location"
+                        class="form-control mb-3 servicio__textarea"
+                        placeholder="Nombre de la persona que recibe"
+                        required
+                    />
+                    
+                    <label for="location">Ubicación de entrega:</label>
+                    <input type="text" placeholder="País / Estado" class="form-control mb-3 servicio__textarea" required>
+                    <input type="text" placeholder="Colonia / Delegación" class="form-control mb-3 servicio__textarea" required>
+                    <input type="text" placeholder="Calle y Número" class="form-control mb-3 servicio__textarea" required>
+                    <input type="text" placeholder="Código Postal" class="form-control mb-3 servicio__textarea" required>
+                    
+                </div>
+                <label for="description" class="uno-3-drop">Descripción:</label>
+                <textarea
+                    id="task-description"
+                    rows="3"
+                    class="form-control mb-3 servicio__textarea uno-3-drop"
+                    placeholder="Descripción del paquete y comentarios"
+                    required
+                ></textarea>
+
+                <h3>Cualquier noticia, será enviada por correo.</h3>
+
+                <button class="boton uno-3-drop" id="btn-task-form" >
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <script src="./mensajeria.js" type="module"></script> <!--Conexión para generación de fichas-->
+
+</body>
+
+
+<footer class="footer">
+    <p class="footer__texto">
+        Servicios Generales  |  Derechos Reservados 2022  |  Universidad Panamericana
+    </p>
+</footer>
+
+</html>

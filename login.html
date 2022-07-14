@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+
+    <!--Vinculación con el archivo normalize.css-->
+    <link rel="preload" href="css/normalize.css" as="style" >
+    <link rel="stylesheet" href="css/normalize.css"> <!--Por su importancia, debe ser el primer archivo en cargar-->
+    
+   <!--Enlace para la API de Google Fonts-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <script src='main.js'></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+   <!--Es importante tener declaradas las librerías antes de declarar en enlace con una hoja de estilos externa-->
+   
+
+   <!--Vinculación del HTML a la hoja de estilos-->
+   <link rel="preload" href="css/styles.css" as="style" >
+   <link href="css/styles.css" rel="stylesheet">
+   <!--La hoja de estilos personalizada debe ser la última en agregarse-->
+
+
+</head>
+<body>
+    <header class="header" >
+        
+        <!--NAVEGACIÓN-->
+        <div class="nav-bg">
+            <nav class="navegacion-principal contenedor"> <!--Se pueden poner varias clases separadas por espacios-->
+                <a href="inicio.html">Inicio</a>
+                <a href="index.html">Servicios</a>
+                <a href="mensajeria.html">Mensajería</a>
+                <a class="nav-activo" href="login.html">Iniciar sesión</a>
+            </nav>
+        </div>
+
+        <!-- CONTENIDO  -->
+        <section class="hero"> <!-- La imagen se coloca desde la clase hero-->
+            <div class="contenido-hero">
+                <h1>Inicio de Sesión</h1> <h3 class="separar-encimados">¡Próximamente!</h3> 
+    
+                <!--Las imágenes SVG son vectores que no se distorcionan y son soportados bien por diversos servidores
+                Estos se extraen de Tabler Icons-->
+                
+                <a class="boton" href= "mailto:mx_operaciones@up.edu.mx"> Enviar Correo </a>
+                <!-- Debe tener un sección que lo rodee porque marca un nuevo contenido --> 
+            </div>
+        </section>
+    </header>  <!-- FIN DEL HEADER -->
+
+</body>
+</html>

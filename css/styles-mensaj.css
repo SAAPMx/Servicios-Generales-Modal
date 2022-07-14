@@ -1,0 +1,442 @@
+/*PROYECTO HECHO CON MARCACIÓN BEM*/
+
+:root{
+    /*Estas serán las variables predetermiandas para el diseño CSS*/
+    --fuente-principal: 'Montserrat', sans-serif;
+
+    --blanco: rgb(255, 255, 255); /* #FFFFFF */
+    --negro: #000;
+    --ocuro: #212121;
+
+    --rojo-up: #881739;
+    --claro-up-1: rgb(213, 190, 136);
+    --claro-up-2: #F7F2EC;
+    --gris: #757575;
+    --gris-claro: #DFE9F3;
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+     /*GLOBALES -------------------------------------------- */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*ESTO ES PARTE DE LO QUE NOS PERMITE AGREGAR QUE UN REM=10px*/
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+body{
+    font-size: 16px; /*1 rem = 10 px*/
+    font-family: 'Montserrat', sans-serif; /* Al colocar la fuente en el Body, esta afecta a todos los elementos*/
+    /*Esta fuente es externa y obedece a las importaciones de Google Fonts y se aplicará de forma general 
+    a todo el doc.
+    Se conectó primero el API en el HTML*/
+    margin: 0;
+    background-image: linear-gradient(to top, var(--gris-claro) 0%, var(--claro-up-2) 20%); /*PARA FONDOS DEGRADADOS*/
+
+    position: relative; /*Para mantener el footer hasta abajo*/
+    /*padding-bottom: ;*/
+    min-height: 100vh;
+}
+.contenedor { /*Límites de la barra de navegación*/
+  max-width: 120rem; /*1200px están limitando la longitud del contenedor*/
+  margin: 0 auto;
+}
+
+.contenedor h2{
+  color: var(--rojo-up);
+}
+.contenedor2 {  /*DA COLOR A TÍTULOS*/
+  background-color: var(--claro-up-2);
+  color: var(--negro);
+}
+
+
+      /*TIPOGRAFÍA --------------------------------------------- */
+h1{
+  font-size: 4.8rem; /*38px*/
+  font-weight: bold;
+}
+h2{
+  font-size: 2.8rem;
+}
+h3{
+  font-size: 1.8rem;
+}
+h1, h2, h3{
+  text-align: center;
+}
+
+
+  /*  NAVEGACIÓN PRINCIPAL --------------------------------------------- */
+.nav-bg { /*Color de la navegación por defecto*/
+    background-color: var(--rojo-up);
+    font-family: 'Roboto', sans-serif;
+}
+.nav-activo{
+  background-color: var(--claro-up-1);
+}
+
+.navegacion-principal {
+    display: flex; /*Habilita la función "flex box" en el elemento que se le coloque*/
+    flex-direction: column;
+    /*flex-direction: row; 
+    align-items: center;
+    Inutiliza a justify-content pero permite la adaptabilidad a dispositivos pequeños*/
+}
+
+/*@media (min-width: 480) {    Medida para CELULARES*/
+     
+@media (min-width: 768px) { /*Medida para cuando se usa una TABLET*/
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;/*Nos permite mover el contenido horizonalmente*/
+    }
+}
+
+.navegacion-principal a { /*Color del texto de la navegación a*/
+    display: block;
+    text-align: center;
+
+    color: var(--blanco);
+    padding: 1rem; /*Es una forma de "engordar" hacia adentro un elemento*/
+    text-decoration: none; /*Agrega las decoraciones especiales al texto (subray*/
+    font-size: 2rem;
+    font-weight: 700;
+    
+}
+.navegacion-principal a:hover {/*PSEUDO CLASE: Sirve para modificar cuando se pone el cursor encima del elemento*/
+    background-color: var(--claro-up-1);
+    color: var(--oscuro); /*Cambia el color de las letras */
+}
+
+.separar-encimados {
+    padding-top: 2rem;
+    /*Se usa para separar bloques entre los servicios ofrecios*/
+}
+.separar-debajo{
+  margin-bottom: 2rem;
+}
+
+/*HERO*/
+.hero__mensajeria{
+  background-image: url(../img/hero2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35rem;
+  position: relative; /*Para HERO que es el padre de los elementos HERO, es necesario agregarle esta condición
+  que debe permitir que la condición HIJO sea ABSOLUTA*/
+  margin-bottom: 2rem;
+}
+
+.contenido-hero{
+  position: absolute;
+  background-color: rgba(0,0,0,.1); /* .5 Se define el color megro y la cuarta condición es el nivel de transparencia
+  del 1 al 0*/
+
+  width: 100%; /*Estas dos condiciones permiten que tome todo el espacio disponible*/
+  height: 100%;
+  /*ALINEAR VERTICALMENTE*/
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*Alineación horizontal*/
+  justify-content: center; /*alineación vertical: Lo centra verticalmente*/
+}
+.contenido-hero__mensajeria {
+  position: absolute;
+  background-color: rgba(0,0,0,.5); /* .5 Se define el color megro y la cuarta condición es el nivel de transparencia
+  del 1 al 0*/
+  width: 100%; /*Estas dos condiciones permiten que tome todo el espacio disponible*/
+  height: 100%;
+  /*ALINEAR VERTICALMENTE*/
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*Alineación horizontal*/
+  justify-content: center; /*alineación vertical: Lo centra verticalmente*/
+}
+
+.contenido-hero__mensajeria h1, 
+.contenido-hero__mensajeria p,
+.contenido-hero__mensajeria h3{
+  color: var(--blanco);
+  font-family: 'Montserrat';
+}
+
+.boton{
+  background-color: var(--rojo-up);
+  color: var(--blanco);
+  font-family: 'Roboto';
+  padding: 2rem, 2rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  width: 90%;
+  text-align: center;
+  border: none;
+}
+@media (min-width: 768px)   {
+   .boton{
+       width: auto;
+       padding: 0rem 1rem;
+   }
+}
+.boton:hover{
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--claro-up-1);
+  color: var(--blanco);
+}
+.sombra{
+  box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54); /*Recuadro sombreado*/
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.bienvenido{
+  color: var(--blanco);
+}
+
+
+/**  DROPDOWN   */
+.dropdown-menu ul {
+  list-style: none;
+  font-size: 1rem;
+}
+.dropdown-menu {
+  position: relative;
+  display: inline-block;
+  height: 4.5rem;
+  width: 20rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+  line-height: 4.5rem;
+  text-align: center;
+  cursor: pointer;
+  color: #FFF;
+  background-color: var(--rojo-up);
+}
+.dropdown {
+  position: absolute;
+  width: 20rem;
+  color: #000;
+}
+.dropdown li {
+  display: none;
+  opacity: 0;
+  background-color: var(--blanco);
+  transition: color .3s;
+}
+.dropdown li:hover{
+  color: #4027c1;
+  background: #f5f3fa;
+}
+.dropdown-menu:hover .dropdown li{
+  display: block;
+  animation: menu1 .5s forwards;
+}
+@keyframes animation{
+  from{
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.dropdown-menu .dropdown li:nth-last-child(1){
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+.dropdown-menu:hover .dropdown li:nth-child(2){
+  animation-delay: 0.2s;
+}
+.dropdown-menu:hover .dropdown li {
+  animation: animation .5s forwards;
+}
+
+ /*MODAL 
+ https://www.youtube.com/watch?v=Iaw9rFopXPY */
+ .modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s .9s;
+  --transform: translateY(-100vh);
+  --transition: transform .8s;
+}
+
+.modal--show{
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+  --transform: translateY(0);
+  --transition: transform .8s .8s;
+}
+
+.modal__container{
+  margin: auto;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%;
+  transform: var(--transform);
+  transition:var(--transition);
+}
+
+.modal__title{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.modal__paragraph{
+  margin-bottom: 1rem;
+}
+
+.modal__close{
+  text-decoration: none;
+  color: var(--blanco);
+  background-color: var(--rojo-up);
+  padding: 1em 3em;
+  border: 1px solid ;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color .3s;
+}
+
+.modal__close:hover{
+  color: var(--rojo-up);
+  background-color: #fff;
+}
+.modal_x{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.modal_x:hover{
+  cursor: pointer;
+}
+
+
+
+
+/**      SERVICIOS     **/
+@media (min-width: 768px) {
+  .servicios{
+      display: grid;
+      /*Para separar la columna en FRACCIONES propoprcionales*/
+      /* grid-template-columns: 1fr 1fr 1fr; */
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem; /*Se utiliza para dar separación entre columnas*/
+
+      /*GRID es utilizado para hacer tablas de CSS*/
+      /*grid-template-columns: 300px, 300px;
+      grid-template-rows: 200px, 800px;*/
+  
+      /*Una forma de resumirlo es primero ROWS y COLUMNS despu{es*/
+      /*grid: 200px 800px / 300px 300px;*/
+  }
+}
+.servicio {
+  display: flex;
+  flex-direction: column; /*Cuando se activa COLUMN ya no hay necesidad de utilizar JUSTIFY CONTENT*/
+  align-items: center;
+}
+.servicio h3{
+  color: var(--oscuro);
+  font-family: 'Montserrat';
+  font-weight: normal;
+  
+}
+.servicio p{
+  line-height: 2;
+}
+
+.servicio__texto{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.servicio__textarea{
+  font-size: medium;
+}
+
+
+
+/*    FORMULARIO    ----------*/
+.formulario{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: center; 
+  column-gap: 3rem;
+}
+.formulario option, 
+.formulario ::placeholder{
+  font-size: medium;
+  font-family: 'Montserrat';
+  color: var(--gris);
+}
+
+@media (min-width: 480px) {
+  .column-drop-css {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      min-width: 90%;
+      gap: 2rem;
+  }
+  .primera {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+  }
+}
+
+@media (min-width: 768px) {
+  .column-drop-css {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  .uno-3-drop {
+      grid-column: 1 / 3;
+      grid-row: unset;
+  }
+  .column-drop-css::placeholder{
+    font-size: large;
+    font-family: 'Montserrat';
+    color: var(--gris);
+  }
+
+}
+
+
+
+
+
+/*    FOOTER --------------------------------------------- */
+.footer{
+    background-color: var(--primario-oscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+
+    position: absolute; /*Para mantener el footer hasta abajo*/
+    bottom: 0;
+    width: 100%;
+  }
+  .footer__texto{
+    text-align: center;
+    font-family: var(--fuenteprincipal);
+    font-size: 2rem;
+  }

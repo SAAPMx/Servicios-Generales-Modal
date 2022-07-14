@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Servicios Generales</title>
+
+     <!--Vinculación con el archivo normalize.css-->
+     <link rel="preload" href="css/normalize.css" as="style" >
+     <link rel="stylesheet" href="css/normalize.css"> <!--Por su importancia, debe ser el primer archivo en cargar-->
+     
+     
+    <!--Enlace para la API de Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='index.js'></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous"> 
+    <!--Es importante tener declaradas las librerías antes de declarar en enlace con una hoja de estilos externa-->
+    
+
+    <!--Vinculación del HTML a la hoja de estilos-->
+    <link rel="preload" href="css/styles.css" as="style" >
+    <link href="css/styles.css" rel="stylesheet">
+    <!--La hoja de estilos personalizada debe ser la última en agregarse-->
+
+
+    
+    <!-- ........................................................................ 
+        SERÁ PARA EL USO PÚBLICO DE LAS DIFERENTES HERRAMIENTAS Y SERVICIOS QUE OFRECE
+        EL ÁREA DE Servicios Generales-->
+
+    <!--Proyecto hecho con BEM y Bootswatch-->
+</head>
+
+<!-- ----------------------------------------------------------------------------- -->
+<body>
+    <header class="header" >
+        
+        <!--NAVEGACIÓN-->
+        <div class="nav-bg">
+            <nav class="navegacion-principal contenedor"> <!--Se pueden poner varias clases separadas por espacios-->
+                <a href="inicio.html">Inicio</a>
+                <a class="nav-activo"  href="index.html">Servicios</a>
+                <a href="mensajeria.html">Mensajería</a>
+                <a href="login.html">Iniciar sesión</a>
+            </nav>
+        </div>
+
+        <!-- CONTENIDO  -->
+        <section class="hero"> <!-- La imagen se coloca desde la clase hero-->
+            <div class="logo_titulo">
+
+                <section class="contenido-hero">
+                    <h1>Área de Servicios Generales</h1> <h2 class="separar-encimados bienvenido">¡Bienvenidos!</h2> 
+        
+                    <!--Las imágenes SVG son vectores que no se distorcionan y son soportados bien por diversos servidores
+                    Estos se extraen de Tabler Icons-->
+                    
+                    <a class="boton" href= "mailto:mx_operaciones@up.edu.mx"> ¡Mándanos un correo!</a>
+                    <!-- Debe tener un sección que lo rodee porque marca un nuevo contenido --> 
+                </section>
+
+                <section>
+                    <!--<img src="/img/logo3.png" alt="Logo UP" class="logo_up" >  -->
+                </section>
+                
+            </div>
+        </section>
+
+    </header>  <!-- FIN DEL HEADER -->
+    
+
+    <!--  INICIO DE CONTENIDO --------------------------------------------------- -->
+    <a name="servicios"></a>  <!--Conexión con el botón de Servicios en el Index-->
+    <main class="contenedor sombra" >
+        <main class="contenedor contenedor2">
+            <h2> Solicitud de Servicios</h2>
+        </main>
+
+            <section class = "servicios"> <!-- Blqoue completo que contiene todos los elementos -->
+                <div class="servicio ">  <!--Primera sección del GRID 1 / 1-->
+
+                   <!--FORMULARIO PARA REPORTE  -->
+                    <!-- ADD TASK  -->
+                    <div class="container p-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>Levantar Solicitud</h3>
+                                <form id="task-form" class="formulario">
+                                    <label for="title">Seleccione un Servicio:</label>
+                                    <select id="task-title" autofocus title="required">
+                                        <option disabled selected> --Opciones-- </option>
+                                        <option value="Intendencia">Apoyo de Intedencia</option>
+                                        <option value="Movimientos">Apoyo para Movimiento de mobiliario</option>
+                                        <option value="Movimientos">Apoyo para Movimiento de cajas</option>
+                                        <option value="Mantenimiento">Apoyo de Mantenimiento</option>
+                                        <option value="Intendencia">Apoyo de Cerrajería</option>
+                                    </select>
+                                    
+                                    <label for="description" class="separar-encimados">Descripción:</label>
+                                    <textarea
+                                        id="task-description"
+                                        rows="3"
+                                        class="form-control mb-3 servicio__textarea"
+                                        placeholder="Cuéntenos detalladamente qué sucede"
+                                        title="required"
+                                        
+                                    ></textarea>
+
+                                    <label for="location">Ubicación:</label>
+                                    <input 
+                                        type="text"
+                                        id="task-location"
+                                        class="form-control mb-3 servicio__textarea"
+                                        class="My First Title"
+                                        placeholder="Dónde se necesita del servicio (ej. Ingeniería 3er piso, oficina 3)"
+                                        autofocus
+                                        title="required"
+                                    />
+
+                                    <label for="contact">Contacto:</label>
+                                    <input 
+                                        type="mail"
+                                        id="task-contact"
+                                        class="form-control mb-3 servicio__textarea"
+                                        class="My First Title"
+                                        placeholder="Escriba su Correo Institucional"
+                                        title="required"
+                                    />
+                    
+                                    <button class="boton" id="btn-task-form" >
+                                        Enviar
+                                    </button>
+  
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+
+                </div>
+
+
+                <div class= "servicio"><!--Tercera sección del GRID 1 / 2-->
+                    <h3 class="separar-encimados"> <strong>¡La nueva forma de hacer solicitudes!</strong> </h3>
+                    <div class="iconos">
+                        <!--Imagen de Resultados de size: 68px -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-analytics" width="68" height="68" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+                            <rect x="9" y="3" width="6" height="4" rx="2" />
+                            <path d="M9 17v-5" />
+                            <path d="M12 17v-1" />
+                            <path d="M15 17v-3" />
+                          </svg>
+
+                    </div>
+                    <p class="servicio__texto separar-encimados">
+                        Responda el siguiente formulario para hacer una nueva solicitud. Cualquier 
+                        noticia llegará a su correo.
+                    </p>
+                    
+                </div>
+            </section> <!--FIN DE "SERVICIOS"-->
+        
+    </main>
+
+    <!-- CUSTOM CODE -->
+    <script src="./index.js" type="module"></script>
+
+
+</body>
+
+
+<footer class="footer">
+    <p class="footer__texto">
+        Servicios Generales  |  Derechos Reservados 2022  |  Universidad Panamericana
+    </p>
+</footer>
+
+</html>

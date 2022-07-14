@@ -1,0 +1,132 @@
+/* https://www.programaenlinea.net/login-transparente-con-css-tutorial-paso-a-paso/ */
+
+/*ESTA HOJA DE ESTILOS FUE HECHA PARA LAS PÁGINAS SEPARADAS DE MENSAJERÍA*/
+:root{
+    /*Estas serán las variables predetermiandas para el diseño CSS*/
+    --fuente-principal: 'Montserrat', sans-serif;
+
+    --blanco: rgb(255, 255, 255); /* #FFFFFF */
+    --negro: #000;
+    --ocuro: #212121;
+
+    --rojo-up: #881739;
+    --claro-up-1: rgb(213, 190, 136);
+    --claro-up-2: #F7F2EC;
+    --gris: #757575;
+    --gris-claro: #DFE9F3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%; /*ESTO ES PARTE DE LO QUE NOS PERMITE AGREGAR QUE UN REM=10px*/
+  }
+  
+  body {
+    font-family: arial;
+    background-image: url('../img/hero2.png');
+  }
+
+/*
+  .form-login {
+    width: 400px;
+    height: 340px;
+    background: var(--claro-up-1);
+    margin: auto;
+    margin-top: 180px;
+    box-shadow: 7px 13px 37px #000;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    border-top: 4px solid var(--rojo-up);
+    color: var(--blanco);
+  } */
+  .form-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    padding: 4rem;
+    background: rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+  }
+  
+  .form-login h5 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+  }
+  
+  .controls {
+    width: 100%;
+    border: 0.1rem solid var(--rojo-up);
+    margin-bottom: 1.5rem;
+    padding: 1.1rem 1rem;
+    background: #252323;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--blanco);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /*buttons {
+    width: 100%;
+    height: 40px;
+    background: var(--rojo-up);
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+  }*/
+
+  .boton{
+    background-color: var(--rojo-up);
+    color: var(--blanco);
+    padding: 2rem, 2rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 90%;
+    text-align: center;
+    border: none;
+  }
+  @media (min-width: 768px)   {
+     .boton{
+         padding: 0rem 1rem;
+     }
+  }
+  .boton:hover{
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--claro-up-1);
+    color: var(--blanco);
+  }
+  
+  .form-login p{
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid;
+  }
+  
+  .form-login a {
+    color: var(--rojo-up);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.4rem;
+  }
+  
+  .form-login a:hover {
+    text-decoration: underline;
+  }
+  .separar-encimados {
+    padding-top: 2rem;
+    /*Se usa para separar bloques entre los servicios ofrecios*/
+}
